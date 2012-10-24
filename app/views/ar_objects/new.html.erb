@@ -1,0 +1,40 @@
+<h1>Create Objects:</h1>
+	
+	<ul class='new_ar_objects'>
+		<li><%= link_to 'New 3d Experience', new_3d_path, class: 'button' %></li>
+		<li><%= link_to 'New Virtual Image', new_image_path, class: 'button' %></li>
+		<li><%= link_to 'New Audiovisual Ibniz Demo', new_ibniz_path, class: 'button' %></li>
+	</ul>
+			
+	
+	
+	
+	
+	<%= form_for @ar_object do |f| %>
+	
+	  <%= f.label :title %>
+	  <%= f.text_field :title  %>
+	  <%= f.label :description %>
+	  <%= f.text_field :description %>
+	  <%= f.label :pos_x %>
+	  <%= f.text_field :pos_x,:value => '0' %>
+	  <%= f.label :pos_y %>
+	  <%= f.text_field :pos_y,:value => '0' %>
+	  <%= f.label :pos_z %>
+	  <%= f.text_field :pos_z,:value => '0' %>
+	  <%= f.label :size_x %>
+	  <%= f.text_field :size_x,:value => '1' %>
+	  <%= f.label :size_y %>
+	  <%= f.text_field :size_y,:value => '1' %>
+	  <%= f.label :size_z %>
+	  <%= f.text_field :size_z,:value => '1' %>
+	  <%= f.label :rot_x %>
+	  <%= f.text_field :rot_x,:value => '0' %> 
+	  <%= f.label :rot_y %>
+	  <%= f.text_field :rot_y,:value => '0' %>
+	  <%= f.label :rot_z %>
+	  <%= f.text_field :rot_z,:value => '0' %>
+	  
+	  
+	  <%= f.submit "Create", class:'btn' %>
+	<% end %>

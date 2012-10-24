@@ -1,6 +1,14 @@
 Objar::Application.routes.draw do
   devise_for :users
-  root :to => 'user#index'
+  resources :users
+  resources :ar_objects
+  
+  root :to => 'static_pages#home'
+  
+  match '/new_3d', to: 'ar_objects#new_3d'
+  match '/new_image', to: 'ar_objects#new_image'
+  match '/new_ibniz', to: 'ar_objects#new_ibniz'
+
   
 
   # The priority is based upon order of creation:

@@ -1,0 +1,31 @@
+
+ <header class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+ 
+ <div class="container">
+		
+	<%= link_to "Objar Storage", root_path, class:'brand' %>
+	
+		<ul class="nav">
+	<% if user_signed_in? %>
+	
+ 		
+		<li class="divider-vertical"></li>
+		 <li><%= link_to 'New Object', new_ar_object_path%></li>
+		 <li class="divider-vertical"></li>
+ 		 <li><%= link_to 'Edit profile', edit_user_registration_path%></li>
+		 <li class="divider-vertical"></li>
+  		<li><%= link_to "Logout", destroy_user_session_path, method: :delete%></li>
+		<li class="divider-vertical"></li>
+		<li class="btn"> Logged in as <%= current_user.email %></li>
+  
+	<% else %>
+  		<li><%= link_to "Sign up", new_user_registration_path%></li>
+		<li class="divider-vertical"></li>
+  		<li><%= link_to "Login", new_user_session_path%></li>
+	<% end %>
+	
+	</ul>
+	</div>
+	</div>
+</header>

@@ -1,0 +1,14 @@
+
+<ul class='nav nav-tabs nav-stacked arobjects'>
+	<% current_user.ar_objects.each do |o| %>
+	<li>    
+	<%=  o.id   %>
+	<%=  o.title  %>
+		<% if user_signed_in? %>
+		
+
+	<%= link_to "delete", o, method: :delete, confirm: "You sure?", title: o.title %>
+			<% end %>
+	</li>
+	<% end %>
+</ul>

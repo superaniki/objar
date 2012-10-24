@@ -1,0 +1,13 @@
+<ul>
+	<% current_user.ar_objects.each do |o| %>
+	<li>    
+	<%=  o.id   %>
+	<%=  o.title  %>
+		<% if user_signed_in? %>
+	<%= link_to "delete", ar_objects_path, method: :delete,
+								 confirm: "You sure?",
+								 title: o.title %>
+			<% end %>
+	</li>
+	<% end %>
+</ul>
